@@ -14,7 +14,7 @@ async function getHotel(userId: number) {
   if (ticket.TicketType.includesHotel === false) return false;
 
   const hotelsExist = await hotelsRepository.findHotels();
-  if (!hotelsExist) throw notFoundError();
+  if (!hotelsExist[0]) throw notFoundError();
 
   return hotelsExist;
 }

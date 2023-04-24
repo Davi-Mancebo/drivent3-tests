@@ -37,7 +37,7 @@ async function getHotelWithRooms(userId: number, hotelId: number) {
         image: hotelWithRooms.image,
         createdAt: hotelWithRooms.createdAt.toISOString(),
         updatedAt: hotelWithRooms.updatedAt.toISOString(),
-        rooms: rooms
+        Rooms: rooms
     }
     
     return returnObject;

@@ -31,13 +31,13 @@ async function getHotelWithRooms(userId: number, hotelId: number) {
   const hotelWithRooms = await hotelsRepository.findHotelById(hotelId);
   if (!hotelWithRooms) throw notFoundError();
   const rooms = await hotelsRepository.findHotelsRoomsByHotelId(hotelId)
-    
     let returnObject = {
         id: hotelWithRooms.id,
         name: hotelWithRooms.name,
         image: hotelWithRooms.image,
         createdAt: hotelWithRooms.createdAt.toISOString(),
         updatedAt: hotelWithRooms.updatedAt.toISOString(),
+        rooms: rooms
     }
     
     return returnObject;
